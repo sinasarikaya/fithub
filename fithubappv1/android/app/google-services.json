@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "988101237337",
+    "project_id": "fithubappv1",
+    "storage_bucket": "fithubappv1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988101237337:android:9aacde2d1b34c183fcef48",
+        "android_client_info": {
+          "package_name": "com.fithubappv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988101237337-lnn9943k6f1a91k39hqhj1kfoulncag5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHcnQXlzNDJER6fFgN81GZolkrSsZ_jtI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988101237337-lnn9943k6f1a91k39hqhj1kfoulncag5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
