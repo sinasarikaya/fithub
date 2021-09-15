@@ -36,18 +36,22 @@ const Home = props => {
 
       <Text style={styles.header}>GİRİŞ</Text>
 
-      <Text style={styles.idLabel}>Kullanıcı Adı:</Text>
+      <Text style={styles.idLabel}>E-mail Adresi:</Text>
       <TextInput style={styles.inputId}></TextInput>
 
       <Text style={styles.pwLabel}>Şifre:</Text>
-      <TextInput style={styles.inputPw} secureTextEntry={true} />
+      <TextInput
+        style={styles.inputPw}
+        placeholder="********"
+        secureTextEntry={true}
+      />
 
       <View style={styles.mainbuttons}>
         <View style={styles.loginbutton}>
           <Button
             title="Giriş"
             color="#b3d9ff"
-            onPress={() => Alert.alert('Giriş Başarılı')}
+            onPress={() => navigation.navigate('Mainpage')}
           />
         </View>
 
@@ -73,7 +77,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 50,
-    marginTop: 30,
+    marginTop: 50,
     marginLeft: 130,
   },
 
@@ -119,9 +123,8 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    marginTop: 70,
+    marginTop: 100,
     marginLeft: 90,
-    marginTop: 20,
   },
 });
 

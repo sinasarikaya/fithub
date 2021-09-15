@@ -1,4 +1,8 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import React, {useState} from 'react';
+import auth from '@react-native-firebase/auth';
+import {errorResolve} from './errorFunction';
 import {
   View,
   Text,
@@ -14,8 +18,34 @@ import {
   Picker,
 } from 'react-native';
 
-const Signin = () => {
+const Signin = props => {
   const [selectedValue, setSelectedValue] = useState('erkek');
+  const {navigation} = props;
+
+  const [usermail, setUserMail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+  const [userPasswordRep, setUserPasswordRep] = useState('');
+
+  const mail = text => setUserMail(text);
+  const password = text => setUserPassword(text);
+  const passwordRep = text => setUserPasswordRep(text);
+
+  const signUser = async () => {
+    if (userPassword === userPasswordRep) {
+      try {
+        await auth().createUserWithEmailAndPassword(usermail, userPassword);
+        Alert.alert('Hoşgeldiniz', 'Kayıt Başarıyla tamamlandı.');
+        props.navigation.goBack();
+      } catch (error) {
+        console.log(error);
+        Alert.alert('Üzgünüz..', errorResolve(error.code));
+      }
+    } else Alert.alert('Üzgünüz..', 'Şifre hatalı!');
+  };
+
+  const goBackPage = () => {
+    props.navigation.navigate('Home');
+  };
 
   return (
     <View style={styles.head}>
@@ -28,14 +58,28 @@ const Signin = () => {
       </View>
       <Text style={styles.header}>KAYIT OL</Text>
 
-      <Text style={styles.ridLabel}>Kullanıcı Adı:</Text>
-      <TextInput style={styles.rinputId}></TextInput>
+      <Text style={styles.ridLabel}>E-mail Adresi:</Text>
+      <TextInput
+        style={styles.rinputId}
+        onChangeText={mail}
+        keyboardType="email-address"
+      />
 
       <Text style={styles.rpwLabel}>Şifre:</Text>
-      <TextInput style={styles.rinputPw} secureTextEntry={true} />
+      <TextInput
+        style={styles.rinputPw}
+        placeholder="********"
+        secureTextEntry={true}
+        onChangeText={password}
+      />
 
       <Text style={styles.rpwLabel2}>Şifre Tekrar Gir:</Text>
-      <TextInput style={styles.rinputPw2} secureTextEntry={true} />
+      <TextInput
+        style={styles.rinputPw2}
+        placeholder="********"
+        secureTextEntry={true}
+        onChangeText={passwordRep}
+      />
       <Text style={styles.rcombobox}>Cinsiyet:</Text>
       <Picker
         style={styles.rpicker}
@@ -44,11 +88,15 @@ const Signin = () => {
         <Picker.Item label="Erkek" value="erkek" />
         <Picker.Item label="Kadın" value="kadın" />
       </Picker>
+
       <View style={styles.rregisterbutton}>
+        <Button title="Kayıt Ol" color="#b3d9ff" onPress={signUser} />
+      </View>
+      <View style={styles.rgobackbutton}>
         <Button
-          title="Kayıt Ol"
+          title="Geri Dön"
           color="#b3d9ff"
-          onPress={() => Alert.alert('Kayıt Başarılı')}
+          onPress={() => navigation.navigate('Home')}
         />
       </View>
     </View>
@@ -61,11 +109,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    marginTop: 30,
+    marginTop: 70,
     marginLeft: 90,
   },
   header: {
-    marginTop: 10,
+    marginTop: 50,
     marginLeft: 110,
     color: 'white',
     fontWeight: 'bold',
@@ -139,5 +187,13 @@ const styles = StyleSheet.create({
     marginLeft: 110,
     marginRight: 130,
   },
+  rgobackbutton: {
+    marginTop: 10,
+    marginLeft: 110,
+    marginRight: 130,
+  },
 });
 export default Signin;
+
+//propslara bak
+//onpress bak
