@@ -19,37 +19,37 @@ import {
   Picker,
 } from 'react-native';
 
-const Mainpage = props => {
+const hesaplayıcılarana = props => {
   const {navigation} = props;
   return (
     <View style={styles.head}>
       <Text style={styles.giristext}>FITHUBAPP</Text>
       <View style={styles.bhesap}>
         <Button
-          title="Hesaplayıcılar"
+          title="Günlük Kalori İhtiyacı Hesaplama"
           color="#0066ff"
-          onPress={() => navigation.navigate('hesaplayıcılarana')}
+          onPress={() => navigation.navigate('gunlukkalori')}
         />
       </View>
       <View style={styles.bblog}>
         <Button
-          title="Blog Sayfası"
+          title="Vücut Kitle Endeksi Hesaplama"
           color="#0066ff"
-          onPress={() => Alert.alert('Blog Ekran')}
+          onPress={() => Alert.alert('Endeks Ekran')}
         />
       </View>
       <View style={styles.bbeslenme}>
         <Button
-          title="Beslenme Rehberi "
+          title="Sıvı İhtiyacı Hesaplama"
           color="#0066ff"
-          onPress={() => Alert.alert('Beslenme Rehberi Ekran')}
+          onPress={() => Alert.alert('Sıvı Ekran')}
         />
       </View>
       <View style={styles.biletisim}>
         <Button
-          title="İletişim"
+          title="Uyku Apnesi Riski"
           color="#0066ff"
-          onPress={() => Alert.alert('İletişim Ekran')}
+          onPress={() => Alert.alert('Apne Ekran')}
         />
       </View>
 
@@ -117,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Mainpage;
+export default hesaplayıcılarana;

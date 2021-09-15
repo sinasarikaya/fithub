@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from '../screens/Home';
 import Signin from '../screens/Signin';
 import Mainpage from '../screens/Mainpage';
+import hesaplayıcılarana from '../screens/hesaplayıcılar';
+import gunlukkalori from '../screens/hesaplayıcılar/gunlukkalori';
 import auth from '@react-native-firebase/auth';
 
 const Stack = createStackNavigator();
@@ -26,6 +28,16 @@ const AppNavigationContainer = () => {
           name="Mainpage"
           options={{headerShown: false}}
           component={Mainpage}
+        />
+        <Stack.Screen
+          name="hesaplayıcılarana"
+          options={{headerShown: false}}
+          component={hesaplayıcılarana}
+        />
+        <Stack.Screen
+          name="gunlukkalori"
+          options={{headerShown: false}}
+          component={gunlukkalori}
         />
       </Stack.Navigator>
     </NavigationContainer>
