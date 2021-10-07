@@ -35,21 +35,21 @@ const Mainpage = props => {
         <Button
           title="Blog Sayfası"
           color="#0066ff"
-          onPress={() => Alert.alert('Blog Ekran')}
+          onPress={() => navigation.navigate('blogsayfası')}
         />
       </View>
       <View style={styles.bbeslenme}>
         <Button
           title="Beslenme Rehberi "
           color="#0066ff"
-          onPress={() => Alert.alert('Beslenme Rehberi Ekran')}
+          onPress={() => navigation.navigate('beslenmerehber')}
         />
       </View>
       <View style={styles.biletisim}>
         <Button
           title="İletişim"
           color="#0066ff"
-          onPress={() => Alert.alert('İletişim Ekran')}
+          onPress={() => navigation.navigate('iletisim')}
         />
       </View>
 

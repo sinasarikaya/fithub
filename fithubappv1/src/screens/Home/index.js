@@ -4,7 +4,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import {navigationRef} from './RootNavigation';
 import {Component} from 'react';
 import React, {useState} from 'react';
-import type {Node} from 'react';
 import auth from '@react-native-firebase/auth';
 import {
   SafeAreaView,
@@ -96,8 +95,8 @@ const styles = StyleSheet.create({
   header: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 50,
-    marginTop: 50,
+    fontSize: 40,
+    marginTop: 30,
     marginLeft: 130,
   },
 

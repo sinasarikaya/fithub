@@ -109,15 +109,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logo: {
-    marginTop: 70,
+    marginTop: 50,
     marginLeft: 90,
   },
   header: {
-    marginTop: 50,
+    marginTop: 20,
     marginLeft: 110,
     color: 'white',
     fontWeight: 'bold',
-    fontSize: 40,
+    fontSize: 35,
   },
   ridLabel: {
     color: 'white',
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
     marginLeft: 30,
   },
   rregisterbutton: {
-    marginTop: 20,
+    marginTop: 10,
     marginLeft: 110,
     marginRight: 130,
   },

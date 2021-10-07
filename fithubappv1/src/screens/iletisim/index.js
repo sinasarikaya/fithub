@@ -19,39 +19,34 @@ import {
   Picker,
 } from 'react-native';
 
-const hesaplayıcılarana = props => {
+const iletisim = props => {
   const {navigation} = props;
   return (
     <View style={styles.head}>
-      <Text style={styles.giristext}>FITHUBAPP</Text>
-      <View style={styles.bhesap}>
-        <Button
-          title="Günlük Kalori İhtiyacı Hesaplama"
-          color="#0066ff"
-          onPress={() => navigation.navigate('gunlukkalori')}
+      <Text style={styles.giristext}>İletişim</Text>
+      <View style={styles.instalogo}>
+      <Image          
+          source={require('./instagram.png')} 
+          style={{width: 30, height: 30}}        
         />
-      </View>
-      <View style={styles.bblog}>
-        <Button
-          title="Vücut Kitle Endeksi Hesaplama"
-          color="#0066ff"
-          onPress={() => navigation.navigate('kitleendeks')}
+      <Text style={styles.instatext}>instagram.com/fithubapp</Text>
+        </View>
+
+        <View style={styles.twitterlogo}>
+      <Image          
+          source={require('./twitter.png')} 
+          style={{width: 30, height: 30}}        
         />
-      </View>
-      <View style={styles.bbeslenme}>
-        <Button
-          title="Sıvı İhtiyacı Hesaplama"
-          color="#0066ff"
-          onPress={() => navigation.navigate('sıvıihtiyac')}
+      <Text style={styles.twittertext}>twitter.com/fithubapp</Text>
+        </View>
+
+        <View style={styles.maillogo}>
+      <Image          
+          source={require('./mail.png')} 
+          style={{width: 30, height: 30}}        
         />
-      </View>
-      <View style={styles.biletisim}>
-        <Button
-          title="Uyku Apnesi Riski"
-          color="#0066ff"
-          onPress={() => navigation.navigate('uykuapne')}
-        />
-      </View>
+      <Text style={styles.mailtext}>fithubappdestek@gmail.com</Text>
+        </View>
 
       <View style={styles.mlogo}>
         <Image
@@ -110,11 +105,51 @@ const styles = StyleSheet.create({
     marginLeft: 80,
     marginRight: 80,
   },
-  mlogo: {
-    marginTop: 80,
-    marginLeft: 100,
-    marginRight: 80,
-  },
+ 
+instalogo: {
+  flexWrap: "wrap",
+  flexDirection: "row",
+  marginTop:50,
+  marginLeft:15
+},
+twitterlogo: {
+  flexWrap: "wrap",
+  flexDirection: "row",
+  marginTop:10,
+  marginLeft:15
+},
+
+maillogo: {
+  flexWrap: "wrap",
+  flexDirection: "row",
+  marginTop:10,
+  marginLeft:15
+},
+
+  instatext: {
+  fontWeight: 'bold',
+  color: '#9F3BA7',
+  fontSize: 20,
+},
+
+twittertext: {
+  fontWeight: 'bold',
+  color: '#43BDEF',
+  fontSize: 20,
+},
+
+mailtext: {
+  fontWeight: 'bold',
+  color: '#000000',
+  fontSize: 20,
+},
+
+mlogo: {
+  marginTop: 180,
+  marginLeft: 100,
+  marginRight: 80,
+},
+
 });
 
-export default hesaplayıcılarana;
+export default iletisim;
